@@ -35,6 +35,10 @@
 		<jsp-file>/jsp/analytics.jsp</jsp-file>
 	</servlet>
 	<servlet>
+	    <servlet-name>list-analytics</servlet-name>
+	    <jsp-file>/jsp/list-analytics.jsp</jsp-file>
+	</servlet>
+	<servlet>
 		<servlet-name>confirm</servlet-name>
 		<jsp-file>/jsp/confirmation.jsp</jsp-file>
 	</servlet>
@@ -73,5 +77,9 @@
 	<servlet-mapping>
 		<servlet-name>analytics</servlet-name>
 		<url-pattern>/analytics</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>list-analytics</servlet-name>
+	    <url-pattern>/list-analytics</url-pattern>
 	</servlet-mapping>
 </web-app>

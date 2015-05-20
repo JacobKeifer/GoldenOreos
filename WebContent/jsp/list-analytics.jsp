@@ -4,6 +4,13 @@
     import="helpers.*"%>
     
 <%
+try{
+if (request.getParameter("runQuery") != null){
+
+String customer = (String) request.getParameter("rowSelector");
+String order = (String) request.getParameter("order");
+String filter = (String) request.getParameter("categoryFilter");
+
 List<ProductTotalHelper> products = AnalyticsHelper.listProductHeader();   
 List<UsersWithSales> usersData = AnalyticsHelper.listUsers();
 List<UserTotals> usersTotal = AnalyticsHelper.userTotals();
@@ -11,6 +18,8 @@ List<UserTotals> usersTotal = AnalyticsHelper.userTotals();
 int productCounter = 0;
 int counter;
 int userCounter = 0;
+
+if (filter.equals("all") && order.equals("alphabetical") && customer.equals("customer")){
 %>       
 <table style="border:1px"
   class="table table-striped"
@@ -56,5 +65,12 @@ else { %>
       %>
 <% 	  
   }
+} // If statement check for all, alphabetical, customer
+} // If statement
+} // Try statement
+catch (Exception e){
+  out.println("Filter your search");	
+}
+
 %>
   
